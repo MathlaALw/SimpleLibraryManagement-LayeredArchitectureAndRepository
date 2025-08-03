@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Repositories
 {
-    class MemberRepository
+    class MemberRepository : IMemberRepository
     {
         public void AddMember(Member member)
         {
@@ -48,5 +48,5 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Repositories
             }
         }
 
-        }
+    }
 }

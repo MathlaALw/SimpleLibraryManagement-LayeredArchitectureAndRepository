@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Repositories
 {
-    class BookRepository
+    class BookRepository : IBookRepository
     {
 
         public void AddBook(Book book)
@@ -20,8 +20,8 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Repositories
 
         public Book GetBook(int id)
         {
-          return GetAllBooks().FirstOrDefault(b => b.Id == id);
-            
+            return GetAllBooks().FirstOrDefault(b => b.Id == id);
+
         }
 
         public List<Book> GetAllBooks()

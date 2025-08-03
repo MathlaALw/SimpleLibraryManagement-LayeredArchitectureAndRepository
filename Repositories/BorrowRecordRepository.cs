@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Repositories
 {
-    class BorrowRecordRepository
+    class BorrowRecordRepository : IBorrowRecordRepository
     {
-       
+
         public void AddBorrowRecord(BorrowRecord record)
         {
             var records = GetAllBorrowRecords();
