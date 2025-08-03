@@ -98,6 +98,14 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository
                         break;
                     case "5":
                         // View all books logic
+                        var books = bookRepository.GetAllBooks();
+                        Console.WriteLine("List of all books:");
+                        foreach (var book in books)
+                        {
+                            Console.WriteLine($"ID: {book.Id}, Title: {book.Title}, Author: {book.Author}, Available: {book.IsAvailable}");
+                        }
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadKey();
                         break;
                     case "6":
                         // View all members logic
