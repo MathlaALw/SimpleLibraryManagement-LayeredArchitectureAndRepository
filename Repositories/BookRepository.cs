@@ -50,5 +50,11 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Repositories
                 FileContext.SaveBook(books);
             }
         }
+
+        // get book by Id
+        //public Book GetBookById(int id)
+        //{
+        //    return GetAllBooks().FirstOrDefault(b => b.Id == id);
+        //}
     }
 }
