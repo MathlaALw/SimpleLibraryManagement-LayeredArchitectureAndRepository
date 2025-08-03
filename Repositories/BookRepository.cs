@@ -40,6 +40,15 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Repositories
             }
         }
 
-
+        public void DeleteBook(int id)
+        {
+            var books = GetAllBooks();
+            var bookToRemove = books.FirstOrDefault(b => b.Id == id);
+            if (bookToRemove != null)
+            {
+                books.Remove(bookToRemove);
+                FileContext.SaveBook(books);
+            }
+        }
     }
 }
