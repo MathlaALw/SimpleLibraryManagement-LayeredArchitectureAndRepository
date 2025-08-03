@@ -109,6 +109,14 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository
                         break;
                     case "6":
                         // View all members logic
+                        var members = memberRepository.GetAllMembers();
+                        Console.WriteLine("List of all members:");
+                        foreach (var member in members)
+                        {
+                            Console.WriteLine($"ID: {member.Id}, Name: {member.Name}");
+                        }
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadKey();
                         break;
                     case "7":
                         // View all borrow records logic
