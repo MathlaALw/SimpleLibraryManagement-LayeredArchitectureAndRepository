@@ -46,12 +46,55 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository
                         break;
                     case "2":
                         // Add member logic
+                        Console.WriteLine("Enter member name:");
+                        var memberName = Console.ReadLine();
+                        libraryService.RegisterMember(new Member
+                        {
+                            Name = memberName
+                        });
+                        Console.WriteLine("Member added successfully.");
                         break;
                     case "3":
                         // Borrow book logic
+                        Console.WriteLine("Enter book ID to borrow:");
+                        if (int.TryParse(Console.ReadLine(), out int bookId))
+                        {
+                            Console.WriteLine("Enter member ID:");
+                            if (int.TryParse(Console.ReadLine(), out int memberId))
+                            {
+                                libraryService.BorrowBook(bookId, memberId);
+                                Console.WriteLine("Book borrowed successfully.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid member ID.");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid book ID.");
+                        }
                         break;
                     case "4":
                         // Return book logic
+                        Console.WriteLine("Enter book ID to return:");
+                        if (int.TryParse(Console.ReadLine(), out int returnBookId))
+                        {
+                            Console.WriteLine("Enter member ID:");
+                            if (int.TryParse(Console.ReadLine(), out int returnMemberId))
+                            {
+                                libraryService.ReturnBook(returnBookId, returnMemberId);
+                                Console.WriteLine("Book returned successfully.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid member ID.");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid book ID.");
+                        }
                         break;
                     case "5":
                         // View all books logic
