@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Services
 {
-    class LibraryService 
+    class LibraryService : ILibraryService
     {
         private readonly IBookRepository _bookRepository;
         private readonly IMemberRepository _memberRepository;

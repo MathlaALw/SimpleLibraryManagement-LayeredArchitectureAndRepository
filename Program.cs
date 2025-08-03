@@ -1,10 +1,17 @@
-﻿namespace SimpleLibraryManagement_LayeredArchitectureAndRepository
+﻿using SimpleLibraryManagement_LayeredArchitectureAndRepository.Repositories;
+
+namespace SimpleLibraryManagement_LayeredArchitectureAndRepository
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            IBookRepository bookRepository = new BookRepository();
+            IMemberRepository memberRepository = new MemberRepository();
+            IBorrowRecordRepository borrowRecordRepository = new BorrowRecordRepository();
+
+            
+
         }
     }
 }
