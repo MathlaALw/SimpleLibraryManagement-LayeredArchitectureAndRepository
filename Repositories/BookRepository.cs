@@ -12,22 +12,22 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Repositories
 
         public void AddBook(Book book)
         {
-            // Logic to add a book to the repository
-            // This could involve adding the book to a database or an in-memory collection
+            var books = GetAllBooks();
+            books.Add(book);
+            FileContext.SaveBook(books);
         }
 
         public Book GetBook(int id)
         {
-            // Logic to retrieve a book by its ID
-            // This could involve querying a database or an in-memory collection
-            return new Book(); // Placeholder return statement
+          return GetAllBooks().FirstOrDefault(b => b.Id == id);
+            
         }
 
         public List<Book> GetAllBooks()
         {
             // Logic to retrieve all books
             // This could involve querying a database or returning an in-memory collection
-            return new List<Book>(); // Placeholder return statement
+            return FileContext.LoadBook(); // Assuming FileContext is used to manage book data
         }
 
         public void UpdateBook(Book book)
