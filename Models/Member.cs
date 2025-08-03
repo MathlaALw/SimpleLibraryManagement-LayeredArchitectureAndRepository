@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Models
 {
-    class LibraryService
+    class Member
     {
     }
 }
