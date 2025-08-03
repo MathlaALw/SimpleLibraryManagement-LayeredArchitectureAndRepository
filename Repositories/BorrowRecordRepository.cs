@@ -50,5 +50,20 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Repositories
             }
         }
 
+        // // Delete borrow record by bookId and memberId
+        public void DeleteBorrowRecord(int bookId, int memberId)
+        {
+            var records = GetAllBorrowRecords();
+            var recordToRemove = records.FirstOrDefault(r => r.BookId == bookId && r.MemberId == memberId);
+            if (recordToRemove != null)
+            {
+                records.Remove(recordToRemove);
+                FileContext.SaveBorrowRecord(records);
+            }
+        }
+
+
+
+
     }
 }

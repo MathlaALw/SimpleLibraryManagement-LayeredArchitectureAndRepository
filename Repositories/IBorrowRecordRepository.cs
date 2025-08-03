@@ -9,5 +9,6 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Repositories
         List<BorrowRecord> GetAllBorrowRecords();
         BorrowRecord GetBorrowRecord(int id);
         void UpdateBorrowRecord(BorrowRecord record);
+        void DeleteBorrowRecord(int bookId, int memberId);
     }
 }
