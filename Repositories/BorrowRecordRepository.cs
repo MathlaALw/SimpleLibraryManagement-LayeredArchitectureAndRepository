@@ -12,7 +12,10 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Repositories
        
         public void AddBorrowRecord(BorrowRecord record)
         {
-            
+            var records = GetAllBorrowRecords();
+            records.Add(record);
+            FileContext.SaveBorrowRecord(records);
+
         }
 
         public BorrowRecord GetBorrowRecord(int id)
