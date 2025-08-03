@@ -90,13 +90,15 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Services
 
         public void AddBook(Book book)
         {
-            if (book == null)
-            {
-                Console.WriteLine("Book cannot be null.");
-                return;
-            }
+            //var books =new Book
+            //{
+            //    Title = book.Title,
+            //    Author = book.Author,
+            //    IsAvailable = true
+            //};
+
             _bookRepository.AddBook(book);
-            Console.WriteLine("Book added successfully.");
+            //Console.WriteLine("Book added successfully.");
 
         }
 

@@ -1,4 +1,5 @@
-﻿using SimpleLibraryManagement_LayeredArchitectureAndRepository.Repositories;
+﻿using SimpleLibraryManagement_LayeredArchitectureAndRepository.Models;
+using SimpleLibraryManagement_LayeredArchitectureAndRepository.Repositories;
 using SimpleLibraryManagement_LayeredArchitectureAndRepository.Services;
 
 namespace SimpleLibraryManagement_LayeredArchitectureAndRepository
@@ -13,9 +14,62 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository
 
             ILibraryService libraryService = new LibraryService(bookRepository, memberRepository, borrowRecordRepository);
 
+            while (true)
+            {
+                Console.WriteLine("Welcome to the Library Management System");
+                Console.WriteLine("1. Add Book");
+                Console.WriteLine("2. Add Member");
+                Console.WriteLine("3. Borrow Book");
+                Console.WriteLine("4. Return Book");
+                Console.WriteLine("5. View All Books");
+                Console.WriteLine("6. View All Members");
+                Console.WriteLine("7. View All Borrow Records");
+                Console.WriteLine("8. Exit");
+                var choice = Console.ReadLine();
+                switch (choice)
+                {
+                    case "1":
+                        // Add book logic
+                        Console.WriteLine("Enter book title:");
+                        var title = Console.ReadLine();
+                        Console.WriteLine("Enter book author:");
+                        var author = Console.ReadLine();
+                        libraryService.AddBook(new Book
+                        {
+                            Title = title,
+                            Author = author,
+                            IsAvailable = true
+                        });
 
+                        Console.WriteLine("Book added successfully.");
 
+                        break;
+                    case "2":
+                        // Add member logic
+                        break;
+                    case "3":
+                        // Borrow book logic
+                        break;
+                    case "4":
+                        // Return book logic
+                        break;
+                    case "5":
+                        // View all books logic
+                        break;
+                    case "6":
+                        // View all members logic
+                        break;
+                    case "7":
+                        // View all borrow records logic
+                        break;
+                    case "8":
+                        return;
+                    default:
+                        Console.WriteLine("Invalid choice, please try again.");
+                        break;
+                }
 
+            }
         }
     }
 }
