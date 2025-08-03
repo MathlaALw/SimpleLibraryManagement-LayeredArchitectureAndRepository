@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,22 +26,20 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Repositories
 
         public List<Book> GetAllBooks()
         {
-            // Logic to retrieve all books
-            // This could involve querying a database or returning an in-memory collection
-            return FileContext.LoadBook(); // Assuming FileContext is used to manage book data
+            return FileContext.LoadBook();
         }
 
         public void UpdateBook(Book book)
         {
-            // Logic to update a book in the repository
-            // This could involve updating the book in a database or an in-memory collection
+            var books = GetAllBooks();
+            var index = books.FindIndex(a => a.Id == book.Id);
+            if (index != -1)
+            {
+                books[index] = book;
+                FileContext.SaveBook(books);
+            }
         }
 
-        public void DeleteBook(int id)
-        {
-            // Logic to delete a book by its ID
-            // This could involve removing the book from a database or an in-memory collection
-        }
 
     }
 }
