@@ -8,5 +8,6 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Repositories
 {
     class BorrowRecordRepository
     {
+
     }
 }
