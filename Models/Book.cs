@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Models
 {
-    class Book
+    public class Book
     {
 
         // Properties 

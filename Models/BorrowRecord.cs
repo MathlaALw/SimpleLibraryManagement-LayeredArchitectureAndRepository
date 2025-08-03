@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Models
 {
-    class BorrowRecord
+    public class BorrowRecord
     {
         // Properties Id, MemberId, BookId, BorrowDate, ReturnDate
         public int Id { get; set; }
