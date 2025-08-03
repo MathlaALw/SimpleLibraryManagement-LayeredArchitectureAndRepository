@@ -120,6 +120,15 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository
                         break;
                     case "7":
                         // View all borrow records logic
+                        var borrowRecords = borrowRecordRepository.GetAllBorrowRecords();
+                        Console.WriteLine("List of all borrow records:");
+                        foreach (var record in borrowRecords)
+                        {
+                            Console.WriteLine($"ID: {record.Id}, Book ID: {record.BookId}, Member ID: {record.MemberId}, Borrow Date: {record.BorrowDate}");
+                        }
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadKey();
+
                         break;
                     case "8":
                         return;
