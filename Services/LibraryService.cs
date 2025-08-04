@@ -42,6 +42,7 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Services
             _bookRepository.UpdateBook(book);
             var borrowRecord = new BorrowRecord
             {
+                Id = _borrowRecordRepository.GetAllBorrowRecords().Count + 1, // Simple ID generation
                 BookId = book.Id,
                 MemberId = member.Id,
                 BorrowDate = DateTime.Now

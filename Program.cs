@@ -44,6 +44,8 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository
                         });
 
                         Console.WriteLine("Book added successfully.");
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadKey();
 
                         break;
                     case "2":
@@ -67,15 +69,23 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository
                             {
                                 libraryService.BorrowBook(bookId, memberId);
                                 Console.WriteLine("Book borrowed successfully.");
+                                Console.WriteLine("Press any key to continue...");
+                                Console.ReadKey();
                             }
                             else
                             {
                                 Console.WriteLine("Invalid member ID.");
+                                Console.WriteLine("Press any key to continue...");
+                                Console.ReadKey();
                             }
                         }
                         else
                         {
                             Console.WriteLine("Invalid book ID.");
+                            Console.WriteLine("Press any key to continue...");
+                            Console.ReadKey();
+
+
                         }
                         break;
                     case "4":
@@ -88,15 +98,21 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository
                             {
                                 libraryService.ReturnBook(returnBookId, returnMemberId);
                                 Console.WriteLine("Book returned successfully.");
+                                Console.WriteLine("Press any key to continue...");
+                                Console.ReadKey();
                             }
                             else
                             {
                                 Console.WriteLine("Invalid member ID.");
+                                Console.WriteLine("Press any key to continue...");
+                                Console.ReadKey();
                             }
                         }
                         else
                         {
                             Console.WriteLine("Invalid book ID.");
+                            Console.WriteLine("Press any key to continue...");
+                            Console.ReadKey();
                         }
                         break;
                     case "5":
