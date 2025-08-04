@@ -14,6 +14,19 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Models
         public string Title { get; set; }
         public string Author { get; set; }
         public bool IsAvailable { get; set; }
+       // public int BookIdCounter { get; set; } = 0;
 
+
+        // constructor 
+        //public Book(int id, string title, string author, bool isAvailable)
+        //{
+            
+        //    //BookIdCounter++;
+        //    //id = BookIdCounter;
+        //    Id = id;
+        //    Title = title;
+        //    Author = author;
+        //    IsAvailable = isAvailable;
+        //}
     }
 }

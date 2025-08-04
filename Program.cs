@@ -16,6 +16,7 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository
 
             while (true)
             {
+                Console.Clear();
                 Console.WriteLine("Welcome to the Library Management System");
                 Console.WriteLine("1. Add Book");
                 Console.WriteLine("2. Add Member");
@@ -24,7 +25,7 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository
                 Console.WriteLine("5. View All Books");
                 Console.WriteLine("6. View All Members");
                 Console.WriteLine("7. View All Borrow Records");
-                Console.WriteLine("8. Exit");
+                Console.WriteLine("0. Exit");
                 var choice = Console.ReadLine();
                 switch (choice)
                 {
@@ -36,6 +37,7 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository
                         var author = Console.ReadLine();
                         libraryService.AddBook(new Book
                         {
+                            Id = bookRepository.GetAllBooks().Count + 1, // Simple ID generation
                             Title = title,
                             Author = author,
                             IsAvailable = true
@@ -50,6 +52,7 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository
                         var memberName = Console.ReadLine();
                         libraryService.RegisterMember(new Member
                         {
+                            Id = memberRepository.GetAllMembers().Count + 1, // Simple ID generation
                             Name = memberName
                         });
                         Console.WriteLine("Member added successfully.");
@@ -130,7 +133,7 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository
                         Console.ReadKey();
 
                         break;
-                    case "8":
+                    case "0":
                         return;
                     default:
                         Console.WriteLine("Invalid choice, please try again.");
