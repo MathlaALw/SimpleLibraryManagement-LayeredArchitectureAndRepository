@@ -12,6 +12,7 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Repositories
         public void AddMember(Member member)
         {
             var members = GetAllMembers();
+
             members.Add(member);
             FileContext.SaveMember(members);
         }
