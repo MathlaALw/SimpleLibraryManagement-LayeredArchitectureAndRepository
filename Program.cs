@@ -58,6 +58,7 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository
                             Name = memberName
                         });
                         Console.WriteLine("Member added successfully.");
+                        Console.ReadKey();
                         break;
                     case "3":
                         // Borrow book logic
@@ -82,40 +83,14 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository
                         libraryService.BorrowBook(bookId ,memberId);
 
 
-
-
-                        //Console.WriteLine("Enter book ID to borrow:");
-                        //if (int.TryParse(Console.ReadLine(), out int bookId))
-                        //{
-                        //    Console.WriteLine("Enter member ID:");
-                        //    if (int.TryParse(Console.ReadLine(), out int memberId))
-                        //    {
-                        //        libraryService.BorrowBook(bookId, memberId);
-                        //        Console.WriteLine("Book borrowed successfully.");
-                        //        Console.WriteLine("Press any key to continue...");
-                        //        Console.ReadKey();
-                        //    }
-                        //    else
-                        //    {
-                        //        Console.WriteLine("Invalid member ID.");
-                        //        Console.WriteLine("Press any key to continue...");
-                        //        Console.ReadKey();
-                        //    }
-                        //}
-                        //else
-                        //{
-                        //    Console.WriteLine("Invalid book ID.");
-                        //    Console.WriteLine("Press any key to continue...");
-                        //    Console.ReadKey();
-
-
-                        //}
                         break;
                     case "4":
                         // Return book logic
+                        libraryService.ViewAllBooks();
                         Console.WriteLine("Enter book ID to return:");
                         if (int.TryParse(Console.ReadLine(), out int returnBookId))
                         {
+                            libraryService.ViewAllMembers();
                             Console.WriteLine("Enter member ID:");
                             if (int.TryParse(Console.ReadLine(), out int returnMemberId))
                             {
