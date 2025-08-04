@@ -13,6 +13,7 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Repositories
         public void AddBorrowRecord(BorrowRecord record)
         {
             var records = GetAllBorrowRecords();
+            int BorrowRecordId = records.Count > 0 ? records.Max(r => r.Id) + 1 : 1; // Generate new ID
             records.Add(record);
             FileContext.SaveBorrowRecord(records);
 
