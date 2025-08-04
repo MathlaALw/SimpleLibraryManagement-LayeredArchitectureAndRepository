@@ -23,7 +23,6 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Services
         }
         public void BorrowBook(int bookId, int memberId)
         {
-
             var book = _bookRepository.GetBook(bookId);
             var member = _memberRepository.GetMember(memberId);
             if (book == null)
@@ -102,6 +101,29 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Services
             //Console.WriteLine("Book added successfully.");
 
         }
+
+        // View all books 
+        public void ViewAllBooks()
+        {
+            var books = _bookRepository.GetAllBooks();
+            Console.WriteLine("List of all books:");
+            foreach (var book in books)
+            {
+                Console.WriteLine($"ID: {book.Id}, Title: {book.Title}, Author: {book.Author}, Available: {book.IsAvailable}");
+            }
+        }
+
+        // View all members
+        public void ViewAllMembers()
+        {
+            var members = _memberRepository.GetAllMembers();
+            Console.WriteLine("List of all members:");
+            foreach (var member in members)
+            {
+                Console.WriteLine($"ID: {member.Id}, Name: {member.Name}");
+            }
+        }
+
 
     }
 }

@@ -8,5 +8,7 @@ namespace SimpleLibraryManagement_LayeredArchitectureAndRepository.Services
         void BorrowBook(int bookId, int memberId);
         void RegisterMember(Member member);
         void ReturnBook(int bookId, int memberId);
+        void ViewAllBooks();
+        void ViewAllMembers();
     }
 }
